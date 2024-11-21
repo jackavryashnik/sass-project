@@ -12,7 +12,7 @@
       $width: $width - 0.02px;
     }
 
-    @media only screen and (#{$type}-width: width) {
+    @media only screen and (#{$type}-width: $width) {
       @if $is-retina {
         @media (min-device-pixel-ratio: 2),
           (min-resolution: 192dpi),
@@ -23,5 +23,20 @@
         @content;
       }
     }
+  }
+}
+
+@mixin frame($width, $height: $width, $is-circle: false) {
+  width: $width;
+  height: $height;
+
+  @if $is-circle {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: top center;
   }
 }
