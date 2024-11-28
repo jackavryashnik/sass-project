@@ -25,6 +25,19 @@ const toggleMenu = () => {
 refsMenu.openMenuBtn.addEventListener('click', toggleMenu);
 refsMenu.closeMenuBtn.addEventListener('click', toggleMenu);
 
+// Switch current tab accent
+const menuLinks = document.querySelectorAll('.menu-list .menu-link');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    menuLinks.forEach(link => link.classList.remove('current'));
+
+    link.classList.add('current');
+  });
+});
+
 // Close the mobile menu on wider screens if the device orientation changes
 window.matchMedia('(min-width: 1200px)').addEventListener('change', event => {
   if (!event.matches) return;
