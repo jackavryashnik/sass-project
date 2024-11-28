@@ -261,6 +261,14 @@ const toggleMenu = () => {
 };
 refsMenu.openMenuBtn.addEventListener("click", toggleMenu);
 refsMenu.closeMenuBtn.addEventListener("click", toggleMenu);
+const menuLinks = document.querySelectorAll(".menu-list .menu-link");
+menuLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    menuLinks.forEach((link2) => link2.classList.remove("current"));
+    link.classList.add("current");
+  });
+});
 window.matchMedia("(min-width: 1200px)").addEventListener("change", (event) => {
   if (!event.matches)
     return;
