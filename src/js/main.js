@@ -27,6 +27,7 @@ refsMenu.closeMenuBtn.addEventListener('click', toggleMenu);
 
 // Switch current tab accent
 const menuLinks = document.querySelectorAll('.menu-list .menu-link');
+const main = document.querySelector('.main');
 
 menuLinks.forEach(link => {
   link.addEventListener('click', (event) => {
@@ -35,6 +36,9 @@ menuLinks.forEach(link => {
     menuLinks.forEach(link => link.classList.remove('current'));
 
     link.classList.add('current');
+
+    const tabName = link.textContent.toLowerCase().trim();
+    main.dataset.tab = tabName;    
   });
 });
 
