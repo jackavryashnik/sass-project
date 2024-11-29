@@ -39,7 +39,7 @@
     fetch(link.href, fetchOpts);
   }
 })();
-const main = "";
+const main$1 = "";
 function _toConsumableArray(arr) {
   if (Array.isArray(arr)) {
     for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
@@ -262,11 +262,14 @@ const toggleMenu = () => {
 refsMenu.openMenuBtn.addEventListener("click", toggleMenu);
 refsMenu.closeMenuBtn.addEventListener("click", toggleMenu);
 const menuLinks = document.querySelectorAll(".menu-list .menu-link");
+const main = document.querySelector(".main");
 menuLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     menuLinks.forEach((link2) => link2.classList.remove("current"));
     link.classList.add("current");
+    const tabName = link.textContent.toLowerCase().trim();
+    main.dataset.tab = tabName;
   });
 });
 window.matchMedia("(min-width: 1200px)").addEventListener("change", (event) => {

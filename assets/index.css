@@ -256,11 +256,61 @@ summary {
           box-shadow: 0px 1px 0px 0px #292932 inset;
 }
 
-.main {
-  display: grid;
+.main .overview-container {
+  display: none;
   gap: 40px;
   padding: 16px;
+}
+.main .contacts-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main .companies-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main .deals-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main .document-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main .messages-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main .calendar-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main .report-container {
+  display: none;
+  gap: 40px;
+  padding: 16px;
+}
+.main[data-tab=overview] .overview-container {
+  display: grid;
   grid-template-areas: "welcome" "co-workers" "tasks" "reports";
+}
+.main[data-tab=companies] .companies-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
 }
 
 .btn {
@@ -1294,11 +1344,37 @@ summary {
 }
 
 @media only screen and (min-width: 768px) {
-  .main {
+  .main .overview-container {
     gap: 36px;
     padding: 36px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "welcome welcome" "co-workers co-workers" "tasks reports";
+  }
+  .main .contacts-container {
+    gap: 36px;
+    padding: 36px;
+  }
+  .main .companies-container {
+    gap: 36px;
+    padding: 36px;
+  }
+  .main .deals-container {
+    gap: 36px;
+    padding: 36px;
+  }
+  .main .document-container {
+    gap: 36px;
+    padding: 36px;
+  }
+  .main .messages-container {
+    gap: 36px;
+    padding: 36px;
+  }
+  .main .calendar-container {
+    gap: 36px;
+    padding: 36px;
+  }
+  .main .report-container {
+    gap: 36px;
+    padding: 36px;
   }
   .reports-item {
     gap: 32px;
@@ -1329,8 +1405,31 @@ summary {
        -moz-box-pack: justify;
             justify-content: space-between;
   }
-  .main {
+  .main .overview-container {
     grid-area: main;
+  }
+  .main .contacts-container {
+    grid-area: main;
+  }
+  .main .companies-container {
+    grid-area: main;
+  }
+  .main .deals-container {
+    grid-area: main;
+  }
+  .main .document-container {
+    grid-area: main;
+  }
+  .main .messages-container {
+    grid-area: main;
+  }
+  .main .calendar-container {
+    grid-area: main;
+  }
+  .main .report-container {
+    grid-area: main;
+  }
+  .main[data-tab=overview] .overview-container {
     grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
     grid-template-areas: "welcome welcome" "co-workers tasks" "co-workers reports";
   }
