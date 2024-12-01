@@ -1,0 +1,73 @@
+@use "../utils/placeholders";
+@use "../utils/variables" as var;
+@use "../utils/functions" as fn;
+@use "../utils/mixins" as mx;
+
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.company-card {
+  padding: 24px;
+  border-radius: 24px;
+
+  width: 343px;
+  height: 196px;
+
+  background-color: fn.get-color("dark-tertiary");
+
+  @include mx.mq("xl") {
+    width: 359px;
+  }
+}
+
+.company-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  @extend %accent-text;
+
+  color: fn.get-color("light");
+}
+
+.company-logo-icon {
+  fill: fn.get-color("light");
+}
+
+.company-card:nth-child(5) .company-logo-icon,
+.company-card:nth-child(6) .company-logo-icon {
+  fill: fn.get-color("dark-tertiary");
+  stroke: fn.get-color("light");
+}
+
+.company-location {
+  @extend %main-text;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+
+  color: fn.get-color("light-secondary");
+
+  @include mx.mq("xl") {
+    margin-bottom: 24px;
+  }
+}
+
+.company-location-icon {
+  fill: fn.get-color("success");
+  stroke: fn.get-color("dark-tertiary");
+}
+
+.company-btn {
+  display: block;
+  margin: 0 auto;
+
+  color: fn.get-color("accent-secondary");
+}

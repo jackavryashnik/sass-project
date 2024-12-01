@@ -5,12 +5,14 @@
 
     &:active {
       border-color: #d14a00;
+      color: #d14a00;
     }
 
     @media (hover: hover) {
       &:hover,
       &:focus {
         border-color: #f15c27;
+        color: #f15c27;
       }
     }
 
