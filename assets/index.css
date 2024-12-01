@@ -174,14 +174,14 @@ meter {
   letter-spacing: 0.025em;
 }
 
-body {
+.company-location, body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.03em;
 }
 
-.board-caption, .co-workers-table caption span, .co-workers-title span, .tasks-title span, .reports-title span {
+.company-name, .board-caption, .co-workers-table caption span, .co-workers-title span, .tasks-title span, .reports-title span {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -437,6 +437,7 @@ summary {
 }
 .btn--frame:active {
   border-color: #d14a00;
+  color: #d14a00;
 }
 .btn--frame[disabled] {
   background-color: rgba(181, 181, 190, 0.5);
@@ -1316,6 +1317,78 @@ summary {
   min-height: 20px;
 }
 
+.company-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 20px;
+}
+
+.company-card {
+  padding: 24px;
+  border-radius: 24px;
+  width: 343px;
+  height: 196px;
+  background-color: #292932;
+}
+
+.company-card-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+}
+
+.company-name {
+  color: #fff;
+}
+
+.company-logo-icon {
+  fill: #fff;
+}
+
+.company-card:nth-child(5) .company-logo-icon,
+.company-card:nth-child(6) .company-logo-icon {
+  fill: #292932;
+  stroke: #fff;
+}
+
+.company-location {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: #b5b5be;
+}
+
+.company-location-icon {
+  fill: #82c43c;
+  stroke: #292932;
+}
+
+.company-btn {
+  display: block;
+  margin: 0 auto;
+  color: #f07f2e;
+}
+
 .badge-danger {
   min-width: 96px;
   padding: 4px 8px;
@@ -1480,6 +1553,12 @@ summary {
   .board-item {
     background-color: #1c1c24;
   }
+  .company-card {
+    width: 359px;
+  }
+  .company-location {
+    margin-bottom: 24px;
+  }
 }
 
 @media only screen and (max-width: 1199.98px) {
@@ -1581,5 +1660,6 @@ summary {
   }
   .btn--frame:hover, .btn--frame:focus {
     border-color: #f15c27;
+    color: #f15c27;
   }
 }
